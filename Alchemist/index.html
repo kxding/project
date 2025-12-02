@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Alchemist</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto Serif" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <!-- <link rel="stylesheet" href="./static/css/bulma-slider.min.css"> -->
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./assets/alchemy.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <!-- <script src="./static/js/bulma-slider.min.js"></script> -->
+  <script src="./static/js/index.js"></script>
+  <script type="text/javascript">
+    var selectedImage = null;
+
+    function showOutput(image, id) {
+      // Remove the selected class from the previously selected image, if any
+      if (selectedImage) {
+        selectedImage.classList.remove("selected");
+      }
+
+      // Add the selected class to the clicked image
+      image.classList.add("selected");
+      selectedImage = image;
+
+      // Get the model output div
+      var outputDiv = document.getElementById(id);
+
+      // Clear the current output
+      outputDiv.innerHTML = "";
+
+      // Get the model output for the selected image
+      var modelOutput = image.getAttribute("content");
+
+      // Display the model output
+      outputDiv.innerHTML = modelOutput;
+    }
+  </script>
+  <script type="text/javascript">
+    var selectedImage2 = null;
+
+    function showOutput2(image, id) {
+      // Remove the selected class from the previously selected image, if any
+      if (selectedImage2) {
+        selectedImage2.classList.remove("selected");
+      }
+
+      // Add the selected class to the clicked image
+      image.classList.add("selected");
+      selectedImage2 = image;
+
+      // Get the model output div
+      var outputDiv = document.getElementById(id);
+
+      // Clear the current output
+      outputDiv.innerHTML = "";
+
+      // Get the model output for the selected image
+      var modelOutput = image.getAttribute("content");
+
+      // Display the model output
+      outputDiv.innerHTML = modelOutput;
+    }
+    var selectedImage3 = null;
+
+    function showOutput3(image, id) {
+      // Remove the selected class from the previously selected image, if any
+      if (selectedImage3) {
+        selectedImage3.classList.remove("selected");
+      }
+
+      // Add the selected class to the clicked image
+      image.classList.add("selected");
+      selectedImage3 = image;
+
+      // Get the model output div
+      var outputDiv = document.getElementById(id);
+
+      // Clear the current output
+      outputDiv.innerHTML = "";
+
+      // Get the model output for the selected image
+      var modelOutput = image.getAttribute("content");
+
+      // Display the model output
+      outputDiv.innerHTML = modelOutput;
+    }
+    var outputs = [
+    "A Midsummer Night's Dream is a comedy play written by William Shakespeare. The play is set in Athens and follows the events of a group of characters who become entangled in a series of romantic misunderstandings. The main plot revolves around the fairy king, Oberon, and his wife, Titania, who are involved in a dispute over a young human named Hermia.<br><br>The play opens with the character of Theseus, the Duke of Athens, preparing to marry Hippolyta, a former queen of the Amazons. Meanwhile, Hermia is in love with Lysander, but her father, Egeus, wants her to marry Demetrius. In an attempt to resolve the situation, Oberon uses his magic to make Demetrius fall in love with Helena, while Lysander and Hermia flee into the woods.<br><br>In the woods, the characters become involved in a series of comedic misunderstandings, including a group of amateur actors who are rehearsing a play. Eventually, Oberon uses his magic to resolve the conflicts and bring the characters together in a happy ending.<br><br>Throughout the play, Shakespeare uses a variety of literary devices, including puns, rhymes, and wordplay, to create a sense of humor and lightheartedness. The play also explores themes of love, desire, and the power of magic. Overall, A Midsummer Night's Dream is a timeless comedy that continues to delight audiences today.",
+    "A Midsummer Night's Dream is a comedy play written by William Shakespeare. The play is set in Athens and follows the events of a group of characters who become entangled in a series of romantic misunderstandings. The main plot revolves around the fairy king, Oberon, and his wife, Titania, who are involved in a dispute over a young human named Hermia.<br><br>The play opens with the character of Theseus, the Duke of Athens, preparing to marry Hippolyta, a former queen of the Amazons. Meanwhile, Hermia is in love with Lysander, but her father, Egeus, wants her to marry Demetrius. In an attempt to resolve the situation, Oberon uses his magic to make Demetrius fall in love with Helena, while Lysander and Hermia flee into the woods.<br><br>In the woods, the characters become involved in a series of comedic misunderstandings, including a group of amateur actors who are rehearsing a play. Eventually, Oberon uses his magic to resolve the conflicts and bring the characters together in a happy ending.<br><br>Throughout the play, Shakespeare uses a variety of literary devices, including puns, rhymes, and wordplay, to create a sense of humor and lightheartedness. The play also explores themes of love, desire, and the power of magic. Overall, A Midsummer Night's Dream is a timeless comedy that continues to delight audiences today.",
+    "A Midsummer Night's Dream is a comedy play written by William Shakespeare. The play is set in Athens and the surrounding woodlands and tells the story of two young lovers, Hermia and Lysander, who are trying to escape the arranged marriage that Hermia's father, Egeus, has planned for her.<br><br>In the woods, the couple meets a group of amateur actors who are rehearsing a play for the wedding of the Duke of Athens and his bride, Hippolyta. The actors, including the character of Bottom, become involved in the events of the play, and the story becomes increasingly chaotic and surreal.<br><br>The play features a number of characters, including fairies, who use their magic to interfere in the events of the play. In the end, the lovers are able to marry and the play concludes with a wedding celebration.<br><br>Overall, A Midsummer Night's Dream is a lighthearted and humorous play that explores themes of love, magic, and the ridiculousness of human behavior.",
+    "A Midsummer Night's Dream is a comedy play written by William Shakespeare. The play is set in Athens and the surrounding forest and tells the story of two young lovers, Hermia and Lysander, who are trying to escape the arranged marriage that Hermia's father, Egeus, has planned for her. In the forest, the couple meets a group of amateur actors who are rehearsing a play for the wedding of the Duke of Athens and his bride, Hippolyta. The play within a play is a comedic romp that involves mistaken identities, love triangles, and a fairy king and queen who use their magic to bring the lovers together in the end. The play ends with a resolution of all the conflicts and the wedding of the Duke and Hippolyta.",
+    "A Midsummer Night's Dream is a comedy play written by William Shakespeare. The play is set in Athens and the surrounding forest and tells the story of two young lovers, Hermia and Lysander, who are trying to escape the arranged marriage that Hermia's father has planned for her. In the forest, they meet a group of amateur actors who are rehearsing a play, and the events that unfold involve mistaken identities, love triangles, and a fairy king and queen who use their magic to resolve the conflicts and bring about a happy ending. The play is known for its whimsical, fantastical setting, its colorful cast of characters, and its themes of love, mischief, and the power of imagination.",
+    "A Mid-Summer Night's Dream is a comedy by William Shakespeare that follows the events surrounding the marriage of Theseus, the Duke of Athens, and Hippolyta, the Queen of the Amazons. The play begins with a group of amateur actors, who are rehearsing a play for the wedding celebration, and a dispute between the fairy king and queen, Oberon and Titania, who are arguing over a mischievous fairy named Puck. Puck mistakenly bewitches the wrong lovers, causing chaos and confusion in the forest. Eventually, with the help of Puck, the couples are reconciled and the wedding celebration can proceed. The play ends with a resolution of the conflicts and a wedding celebration.",
+    "A Mid-Summer Night's Dream is a comedy by Shakespeare that follows the events that unfold over a chaotic night in an enchanted forest where two young lovers, Hermia and Lysander, seek to marry against their wealthy parents' wishes. Meanwhile, a group of mischievous fairies and a troupe of amateur actors rehearse a play, leading to mistaken identities, confusion, and hilarious hijinks. The resolution comes when the fairy king and queen intervene and the lovers are ultimately united, and the play within a play is performed to celebrate the marriages.",
+    " A Mid-Summer Night's Dream is a comedy by Shakespeare that involves two young lovers, Hermia and Lysander, who flee into a forest to escape arranged marriages and find themselves in a world of mischievous fairies and a group of amateur actors who are rehearsing a play. Chaos ensues as the fairies use their magic to interfreampt the lovers and the actors, causing confusion and mistaken identities. Eventually, with the intervention of the fairy king and queen, the lovers are reunited and the wrong marriages are reversed. The play ends with a wedding celebration.",
+    "A Mid-Summer Night's Dream is a Shakespeare play about two young lovers, Hermia and Lysander, who flee into a forest to marry due to family conflicts. They are followed by a group of fairies who meddle with their lives and those of a group of amateur actors preparing for a play. Chaos ensues with mistaken identities, love potions, and reconculciliations, ultimately ending in the spirits intervening and everything being resolved through a series of marriages.",
+    "In A Mid-Summer Night's Dream is Shakespeare's romantic comedy that involves various interwoven love interliairs and mischievious fairies in a forest setting. Duke Theseus and Hippolyta, Hippielova discover the couples"
+    // Add more outputs as needed
+  ];
+  function updateOutput(value) {
+    // Get the output display element
+    var outputDisplay = document.getElementById("output-display");
+  
+    // Update the output display
+    outputDisplay.value = value;
+  
+    // Select an output from the list based on the slider value
+    // This assumes that the slider value is an index into the list of outputs
+    var selectedOutput = outputs[value - 1];  // Subtract 1 because array indices start at 0
+  
+    // Update the model output with the selected output
+    var modelOutput = document.getElementById("model-output3");
+    modelOutput.innerHTML = selectedOutput;
+  }
+  </script>
+
+</head>
+
+<body
+  onload="showOutput(document.querySelector('image-selection1 img'), 'model-output1'); showOutput2(document.querySelector('image-selection2 img'), 'model-output2'); showOutput3(document.querySelector('image-selection3 img'), 'model-output4')">
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title"> <img src="./assets/alchemy.svg"
+                style="width:4%;" />
+              Alchemist: Unlocking Efficiency in Text-to-Image Model Training via Meta-Gradient Data Selection 
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://kxding.github.io/project/Alchemist/" target="_blank">Kaixin Ding</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://kxding.github.io/project/Alchemist/" target="_blank">Yang Zhou</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://xavierchen34.github.io/" target="_blank">Xi Chen</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="" target="_blank">Miao Yang</a><sup>3</sup>,
+              </span>
+               <span class="author-block">
+                <a href="" target="_blank">Jiarong Ou</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://openreview.net/profile?id=~Rui_Chen31" target="_blank">Rui Chen</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=sQ30WyUAAAAJ&hl=zh-CN" target="_blank">Xin Tao</a><sup>3</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://hszhao.github.io/" target="_blank">Hengshuang Zhao</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>HKU,</span>
+              <span class="author-block"><sup>2</sup>SCUT</span>
+              <span class="author-block"><sup>3</sup>Kuaishou Technology, Kling team</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2312.04302.pdf" class="button is-normal is-rounded is-dark"
+                    target="_blank">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://git.corp.kuaishou.com/VGI-Research/dingkaixin03/alchemist/"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <img src="./static/images/logo.png" style="width:100%;"/> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p style="font-size: small;">
+
+            Recent advances in Text-to-Image (T2I) generative models, such as Imagen, Stable Diffusion, and FLUX, have led to remarkable improvements in visual quality. 
+            However, their performance is fundamentally limited by the quality of training data. 
+            <span style="background-color: rgb(249, 246, 217);">Web-crawled and synthetic image datasets often contain low-quality or redundant samples, which lead to degraded visual fidelity, unstable training, and inefficient computation.</span> 
+            Hence, effective data selection is crucial for improving data efficiency. Existing approaches rely on costly manual curation or heuristic scoring based on single-dimensional features in Text-to-Image data filtering. 
+            Although meta-learning based method has been explored in LLM, there is no adaptation for image modalities. 
+            <span style="background-color: rgb(249, 246, 217);">To this end, we propose Alchemist, a meta-gradient-based framework to select a suitable subset from large-scale text-image data pairs.</span> 
+            Our approach automatically learns to assess the influence of each sample by iteratively optimizing the model from a data-centric perspective. Alchemist consists of two key stages: data rating and data pruning. 
+            <span style="background-color: rgb(249, 246, 217);">We train a lightweight rater to estimate each sample's influence based on gradient information, enhanced with multi-granularity perception.</span> <span style="background-color: rgb(249, 246, 217);">
+            We then use the Shift-Gsampling strategy to select informative subsets for efficient model training.</span> 
+            <span style="background-color: rgb(249, 246, 217);">Alchemist is the first automatic, scalable, meta-gradient-based data selection framework for Text-to-Image model training.</span> <span style="background-color: rgb(249, 246, 217);">Experiments on both synthetic and web-crawled datasets demonstrate that Alchemist consistently improves visual quality and downstream performance.</span> <span style="background-color: rgb(249, 246, 217);">Training on an Alchemist-selected 50% of the data can outperform training on the full dataset.</span>   
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+      <section class="hero teaser">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered has-text-justified">
+            <div class="column is-four-fifths">
+              <br>
+              <img src="./assets/pipeline.jpg" width="100%" />
+              <br />
+              <p style="font-size: small;">
+                Overall pipeline of Alchemist. In the initial data rating stage (a), the rater predicts a classification score for each image based
+                on gradient extracted from a T2I proxy model. The rater and the proxy model are jointly optimized through weighted loss and total loss. In
+                the data pruning stage (b), we introduce the Shift-Gsample strategy to efficiently retain informative samples while filtering out redundant
+                data and outliers. The resulting Alchemist-selected dataset enables highly efficient training of downstream text-to-image models.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Extensions. -->
+      <br>
+      <br>
+      <h2 class="title is-5">LAION-30M</h2>
+      <table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse; width:100%; text-align:center; font-size:14px;">
+        <thead>
+            <tr>
+                <th rowspan="2">Method</th>
+                <th rowspan="2">#Params</th>
+                <th rowspan="2">#Images</th>
+                <th rowspan="2">Training Time (hours)</th>
+                <th colspan="2">MJHQ-30K</th>
+                <th rowspan="2">GenEval</th>
+            </tr>
+            <tr>
+                <th>FID ↓</th>
+                <th>CLIP-Score ↑</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Full</td>
+                <td>0.3B</td>
+                <td>30M</td>
+                <td>65.34</td>
+                <td>17.48</td>
+                <td>0.2336</td>
+                <td><b>0.2752</b></td>
+            </tr>
+
+            <tr style="background:#ddd">
+                <td colspan="7"></td>
+            </tr>
+
+            <tr>
+                <td>Random</td>
+                <td>0.3B</td>
+                <td>15M</td>
+                <td>34.60</td>
+                <td>19.70</td>
+                <td>0.2220</td>
+                <td>0.2632</td>
+            </tr>
+
+            <tr>
+                <td>Aesthetic</td>
+                <td>0.3B</td>
+                <td>15M</td>
+                <td>34.60</td>
+                <td><u>17.36</u></td>
+                <td><u>0.2299</u></td>
+                <td>0.2604</td>
+            </tr>
+
+            <tr>
+                <td>Clarity</td>
+                <td>0.3B</td>
+                <td>15M</td>
+                <td>34.60</td>
+                <td>17.85</td>
+                <td>0.2261</td>
+                <td>0.2251</td>
+            </tr>
+
+            <tr>
+                <td>Frequency</td>
+                <td>0.3B</td>
+                <td>15M</td>
+                <td>34.60</td>
+                <td>18.77</td>
+                <td>0.2276</td>
+                <td>0.2519</td>
+            </tr>
+
+            <tr>
+                <td>Edge-density</td>
+                <td>0.3B</td>
+                <td>15M</td>
+                <td>34.60</td>
+                <td>20.13</td>
+                <td>0.2240</td>
+                <td>0.2429</td>
+            </tr>
+
+            <tr style="background:#ddd">
+                <td colspan="7"></td>
+            </tr>
+
+            <tr>
+                <td>Ours-small</td>
+                <td>0.3B</td>
+                <td>6M</td>
+                <td>13.08</td>
+                <td>18.22</td>
+                <td>0.2277</td>
+                <td>0.2367</td>
+            </tr>
+
+            <tr>
+                <td><b>Ours</b></td>
+                <td>0.3B</td>
+                <td>15M</td>
+                <td>34.60</td>
+                <td><b>16.20</b></td>
+                <td><b>0.2325</b></td>
+                <td><u>0.2645</u></td>
+            </tr>
+
+        </tbody>
+    </table>
+     
+      <!--/ Extensions. -->
+      <br><br>
+      <h2 class="title is-5">Image distribution of Alchemist-selected subset</h2>
+
+      <img src="./assets/data_rated_1.jpg" width="100%">
+      <br><br>
+
+      <h2 class="title is-5">performance changes curve with epochs</h2>
+
+      <img src="./assets/epoch_v1.jpg" width="100%">
+      <br><br>
+      
+      <h2 class="title is-5">FLUX lora finetuning</h2>
+
+      <img src="./assets/Flux_lora.jpg" width="100%">
+      <br><br>
+      
+      
+     
+    <section class="section">
+    <div class="container is-max-desktop">
+      <section class="hero is-light is-small">
+        <div class="hero-body">
+          <b> We develop a meta-gradient-based framework that automatically selects the most informative text–image samples to improve T2I model training quality and efficiency.</b>
+          <div class="container" style="text-align:center">
+            <br>
+            <div class="video-container">
+              <video id="myVideo" autoplay muted controls>
+                <source src="./assets/kling_t2v.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <script>
+                window.onload = function () {
+                  var vid = document.getElementById("myVideo");
+                  vid.currentTime = 2;
+                };
+              </script>
+              This example is generated by Kling AI 2.5 Turbo.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+
+      <br><br>
+      <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+          <h2 class="title">BibTeX</h2>
+          <pre><code>@article{ding2025alchemist,
+      title={Alchemist: Unlocking Efficiency in Text-to-Image Model Training via Meta-Gradient Data Selection}, 
+      author={Kaixin Ding, Yang Zhou, Xi Chen, Miao Yang, Jiarong Ou, Rui Chen, Xin Tao, Hengshuang Zhao},
+      year={2025},
+      journal={arXiv preprint xxxx.xxxxx},
+}
+      </code></pre>
+        </div>
+      </section>
+
+
+      <footer class="footer">
+        <div class="container">
+          <div class="content has-text-centered">
+          </div>
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <div class="content">
+                <p>
+                  This website is licensed under a <a rel="license"
+                    href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                    Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+                <p>
+                  Website template credit to <a href="https://julianjuaner.github.io/projects/PromptHighlighter/">Prompt Highlighter</a> and <a href="https://nerfies.github.io/">Nerfies</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+</body>
+
+</html>
