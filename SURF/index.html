@@ -73,6 +73,7 @@ tr:hover {
         SURF
     </h2>
     <ul>
+        <li><a href="index.html#paper-figures" class="nav-link"><i class="fas fa-image"></i> Paper Figures </a></li>
         <li><a href="index.html#showcases" class="nav-link"><i class="fas fa-video"></i> Show Cases on 720P </a></li>
         <li><a href="index.html#Showcases of 1080p" class="nav-link"><i class="fas fa-video"></i> Show Cases on 1080P </a></li>
         <li><a href="index.html#compare" class="nav-link"><i class="fas fa-trophy"></i> Comparison </a></li>
@@ -112,7 +113,7 @@ tr:hover {
             </div>
 
             <div class="links">
-                <p><a href="https://github.com/kxding/SURF" target="_blank">Paper (Arxiv)</a></p>
+                <p><a href="https://arxiv.org/abs/2603.21002" target="_blank">Paper (Arxiv)</a></p>
                 <p><a href="https://github.com/kxding/SURF" target="_blank">GitHub</a></p>
             </div>
             
@@ -130,6 +131,27 @@ tr:hover {
  SURF is simple, efficient, and compatible with various base models, achieving 12.5× speedup for generating 5-second, 16fps, 720p Wan 2.1 videos and 8.7× speedup for generating 5-second, 24fps, 720p HunyuanVideo.
 </h3>
 
+        <section id="paper-figures" class="gallery-section paper-figures-section">
+            <h2>Paper Figures</h2>
+            <div class="paper-figure-list">
+                <figure class="paper-figure">
+                    <img src="assets/paper_figures/teaser.png" alt="SURF teaser visual results" loading="lazy">
+                    <figcaption>Teaser: high-resolution video generation with retained model priors.</figcaption>
+                </figure>
+                <figure class="paper-figure">
+                    <img src="assets/paper_figures/pipeline.png" alt="SURF pipeline overview" loading="lazy">
+                    <figcaption>Pipeline: fast low-resolution preview followed by prior-preserving refinement.</figcaption>
+                </figure>
+                <figure class="paper-figure">
+                    <img src="assets/paper_figures/stage12_demo.png" alt="SURF stage one and stage two demonstration" loading="lazy">
+                    <figcaption>Two-stage generation: preview first, then refine to the final high-resolution video.</figcaption>
+                </figure>
+                <figure class="paper-figure">
+                    <img src="assets/paper_figures/compare_overall.png" alt="SURF visual comparison with baseline methods" loading="lazy">
+                    <figcaption>Overall comparison with baseline acceleration and generation methods.</figcaption>
+                </figure>
+            </div>
+        </section>
 
         <section id="showcases" class="gallery-section">
             <h2>Show Cases on 720P</h2>

@@ -272,6 +272,38 @@ font-size: 12pt;
     font-weight: normal;
 }
 
+.paper-figures-section {
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.paper-figure-list {
+    display: grid;
+    gap: 24px;
+}
+
+.paper-figure {
+    margin: 0;
+}
+
+.paper-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #e4e0da;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.paper-figure figcaption {
+    margin-top: 8px;
+    color: #555;
+    font-size: 1.05em;
+    line-height: 1.45;
+    text-align: center;
+}
+
 .citation-container {
     display: flex;
     justify-content: center;
