@@ -272,22 +272,18 @@ font-size: 12pt;
     font-weight: normal;
 }
 
-.paper-figures-section {
-    width: 92%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.paper-figure-list {
+.intro-figures {
     display: grid;
     gap: 24px;
+    width: 92%;
+    margin: 28px auto 0;
 }
 
-.paper-figure {
+.intro-figure {
     margin: 0;
 }
 
-.paper-figure img {
+.intro-figure img {
     display: block;
     width: 100%;
     height: auto;
@@ -296,12 +292,12 @@ font-size: 12pt;
     background: #fff;
 }
 
-.paper-figure figcaption {
-    margin-top: 8px;
+.intro-figure figcaption {
+    margin-top: 10px;
     color: #555;
-    font-size: 1.05em;
-    line-height: 1.45;
-    text-align: center;
+    font-size: 1.08em;
+    line-height: 1.55;
+    text-align: left;
 }
 
 .citation-container {
