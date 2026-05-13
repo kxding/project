@@ -20,7 +20,9 @@ images.forEach((img, index) => {
     var thumbnail = img.cloneNode(true);
     thumbnail.classList.remove('gallery-image');
     thumbnail.classList.add('thumbnail');
-    thumbnailsContainer.appendChild(thumbnail);
+    if (thumbnailsContainer) {
+        thumbnailsContainer.appendChild(thumbnail);
+    }
 
     img.onclick = function () {
         openModal(index);
@@ -71,9 +73,13 @@ function updateThumbnails() {
 
 // Get close button and add click event
 var span = document.getElementsByClassName("close")[0];
-span.onclick = function () {
-    closeModal();
-    watermark.style.display = "none"; // Hide watermark when closing modal
+if (span) {
+    span.onclick = function () {
+        closeModal();
+        if (watermark) {
+            watermark.style.display = "none"; // Hide watermark when closing modal
+        }
+    }
 }
 
 // Controls for switching images
@@ -90,48 +96,56 @@ function plusSlides(n) {
 var prev = document.querySelector('.prev');
 var next = document.querySelector('.next');
 
-prev.onclick = function () {
-    plusSlides(-1);
+if (prev) {
+    prev.onclick = function () {
+        plusSlides(-1);
+    }
 }
 
-next.onclick = function () {
-    plusSlides(1);
+if (next) {
+    next.onclick = function () {
+        plusSlides(1);
+    }
 }
 
 // Add keyboard navigation
 document.addEventListener('keydown', function(event) {
-    if (modal.style.display === 'block') {
+    if (modal && modal.style.display === 'block') {
         if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
             plusSlides(-1);
         } else if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
             plusSlides(1);
         } else if (event.key === 'Escape') {
             closeModal();
-            watermark.style.display = "none"; // Hide watermark when closing modal
+            if (watermark) {
+                watermark.style.display = "none"; // Hide watermark when closing modal
+            }
         }
     }
 });
 
 
 
-modalImg.addEventListener('mouseleave', function() {
-    isDragging = false;
-});
+if (modalImg) {
+    modalImg.addEventListener('mouseleave', function() {
+        isDragging = false;
+    });
 
-modalImg.addEventListener('mouseup', function() {
-    isDragging = false;
-});
+    modalImg.addEventListener('mouseup', function() {
+        isDragging = false;
+    });
 
-modalImg.addEventListener('mousemove', function(e) {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - modalImg.offsetLeft;
-    const y = e.pageY - modalImg.offsetTop;
-    const walkX = (x - startX) * 2; // Adjust image move speed
-    const walkY = (y - startY) * 2; // Adjust image move speed
-    modalImg.scrollLeft = scrollLeft - walkX;
-    modalImg.scrollTop = scrollTop - walkY;
-});
+    modalImg.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - modalImg.offsetLeft;
+        const y = e.pageY - modalImg.offsetTop;
+        const walkX = (x - startX) * 2; // Adjust image move speed
+        const walkY = (y - startY) * 2; // Adjust image move speed
+        modalImg.scrollLeft = scrollLeft - walkX;
+        modalImg.scrollTop = scrollTop - walkY;
+    });
+}
 
 
 
