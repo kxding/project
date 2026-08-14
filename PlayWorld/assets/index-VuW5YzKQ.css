@@ -11,4 +11,9 @@
 .compact-results{min-width:680px}
 .benchmark-table th,.benchmark-table td,.result-table th,.result-table td{overflow-wrap:normal;word-break:normal}
 @media(max-width:1000px){.hero-content{min-height:680px}.model-tabs{grid-template-columns:repeat(auto-fit,minmax(108px,1fr))}}
-@media(max-width:640px){.hero-content{width:calc(100% - 28px);min-height:720px}.hero h1{font-size:clamp(54px,18vw,68px)}.result-table-card{margin-left:0;margin-right:0}.model-tabs{grid-template-columns:repeat(auto-fit,minmax(96px,1fr))}}
+@media(max-width:640px){.hero-content{width:calc(100% - 28px);min-height:720px}.hero h1{font-size:clamp(54px,18vw,68px)}.result-table-card{margin-left:0;margin-right:0}.model-tabs{grid-template-columns:repeat(auto-fit,minmax(96px,1fr))}}/* The leaderboard table is compact enough to fit; avoid scrollbar/layout jitter. */
+.result-table-scroll{overflow-x:clip}
+.result-table,.compact-results{width:100%;min-width:0;table-layout:fixed}
+.result-table th,.result-table td{white-space:normal;overflow-wrap:normal;word-break:normal}
+.hero-media{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr)}
+@media(max-width:640px){.hero-media{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(4,1fr)}}
