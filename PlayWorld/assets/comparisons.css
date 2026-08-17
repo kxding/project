@@ -8,6 +8,29 @@
   gap: 18px;
 }
 
+.comparison-prompt {
+  margin: -28px 0 32px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--violet);
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.comparison-prompt span,
+.full-process-prompt span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--violet);
+  font: 700 9px var(--mono);
+  letter-spacing: 0.12em;
+}
+
+.comparison-prompt p {
+  margin: 0;
+  color: #54455f;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
 .comparison-card {
   margin: 0;
   overflow: hidden;
@@ -47,6 +70,18 @@
 
 .comparison-label-agent {
   background: rgba(107, 69, 138, 0.9);
+}
+
+.full-process-prompt {
+  margin: 0;
+  padding: 0 14px 15px;
+  color: #ded2e6;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.full-process-prompt span {
+  color: #b895d2;
 }
 
 @media (max-width: 720px) {

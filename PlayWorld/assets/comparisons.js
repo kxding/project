@@ -4,6 +4,10 @@ const comparisonSection = `
     <div class="section-head">
       <h2>Control Strategies.</h2>
     </div>
+    <div class="comparison-prompt">
+      <span>PROMPT</span>
+      <p>Move along a rectangular path around the central full-body sculpture with the camera held facing the original direction, then return to the original position.</p>
+    </div>
     <div class="comparison-grid">
       <figure class="comparison-card">
         <div class="comparison-video-shell">
@@ -26,6 +30,15 @@ const comparisonSection = `
     </div>
   </section>
 `;
+
+const fullProcessPrompts = {
+  LS010: 'Rotate the camera 360 degrees clockwise in place, then return to the original angle facing the original view.',
+  OE014: 'Turn the camera left 90 degrees, then turn back to the original view.',
+  GC008: 'Walk forward 5 steps, tilt the view 30 degrees up, then tilt the view 30 degrees down to look back at the original height.',
+  GC010: 'Turn right 90 degrees, then turn back left to the starting view.',
+  GC022: 'Rotate the camera 360 degrees clockwise in place, then return to the original angle facing the original view.',
+  GC033: 'Turn the camera left 90 degrees, then turn back to face the display window.',
+};
 
 function ensureComparisonStyles() {
   if (document.querySelector('link[data-playworld-comparisons]')) return;
@@ -55,11 +68,33 @@ function mountComparisons() {
   }
 }
 
+function mountFullProcessPrompts() {
+  document.querySelectorAll('.full-process-videos figure').forEach((figure) => {
+    if (figure.querySelector('.full-process-prompt')) return;
+
+    const caseId = figure.querySelector('figcaption strong')?.textContent?.trim();
+    const prompt = caseId ? fullProcessPrompts[caseId] : null;
+    if (!prompt) return;
+
+    const promptElement = document.createElement('p');
+    promptElement.className = 'full-process-prompt';
+    promptElement.innerHTML = `<span>PROMPT</span>${prompt}`;
+    figure.append(promptElement);
+  });
+}
+
 function initializeComparisons() {
   mountComparisons();
-  requestAnimationFrame(() => requestAnimationFrame(mountComparisons));
+  mountFullProcessPrompts();
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    mountComparisons();
+    mountFullProcessPrompts();
+  }));
 
-  const observer = new MutationObserver(mountComparisons);
+  const observer = new MutationObserver(() => {
+    mountComparisons();
+    mountFullProcessPrompts();
+  });
   observer.observe(document.documentElement, { childList: true, subtree: true });
 }
 
