@@ -2,7 +2,7 @@ const comparisonSection = `
   <section class="section comparisons" id="comparisons">
     <div class="section-kicker">COMPARISONS</div>
     <div class="section-head">
-      <h2>Comparison of Different Trajectory Control Strategies.</h2>
+      <h2>Control Strategies.</h2>
     </div>
     <div class="comparison-grid">
       <figure class="comparison-card">
