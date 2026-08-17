@@ -9,22 +9,12 @@ const comparisonSection = `
       <p>Move along a rectangular path around the central full-body sculpture with the camera held facing the original direction, then return to the original position.</p>
     </div>
     <div class="comparison-grid">
-      <figure class="comparison-card">
+      <figure class="comparison-card comparison-card-combined">
         <div class="comparison-video-shell">
-          <video controls playsinline preload="metadata" poster="/project/PlayWorld/comparisons/preset-only-gc002.jpg">
-            <source src="/project/PlayWorld/comparisons/preset-only-gc002.mp4" type="video/mp4">
+          <video controls playsinline preload="metadata" poster="/project/PlayWorld/comparisons/control-strategies-gc002.jpg">
+            <source src="/project/PlayWorld/comparisons/control-strategies-gc002.mp4" type="video/mp4">
             Your browser does not support video playback.
           </video>
-          <span class="comparison-label">Preset Only</span>
-        </div>
-      </figure>
-      <figure class="comparison-card">
-        <div class="comparison-video-shell">
-          <video controls playsinline preload="metadata" poster="/project/PlayWorld/comparisons/worldplay-agent-gc002.jpg">
-            <source src="/project/PlayWorld/comparisons/worldplay-agent-gc002.mp4" type="video/mp4">
-            Your browser does not support video playback.
-          </video>
-          <span class="comparison-label comparison-label-agent">WorldPlay Agent</span>
         </div>
       </figure>
     </div>
