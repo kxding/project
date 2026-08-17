@@ -5,8 +5,9 @@ const comparisonSection = `
       <h2>Control Strategies.</h2>
     </div>
     <div class="comparison-prompt">
-      <span>PROMPT</span>
-      <p>Move along a rectangular path around the central full-body sculpture with the camera held facing the original direction, then return to the original position.</p>
+      <span>OBJECTIVE</span>
+      <p>Trace a rectangular trajectory while maintaining the camera's original orientation, then return to the starting position.</p>
+      <p class="comparison-explanation"><strong>Preset Only</strong> executes the rectangular trajectory in front of the central sculpture, so the sculpture remains continuously visible. The <strong>WorldPlay Agent</strong> instead moves around the sculpture, causing it to leave and later re-enter the field of view. This distinction is essential when evaluating world-model memory: preserving an object that never leaves the frame primarily reflects geometric consistency and does not, by itself, demonstrate memory. A stronger memory test requires the model to reconstruct the sculpture consistently after it has disappeared from view.</p>
     </div>
     <div class="comparison-grid">
       <figure class="comparison-card comparison-card-combined">

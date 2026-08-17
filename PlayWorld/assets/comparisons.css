@@ -31,6 +31,12 @@
   line-height: 1.55;
 }
 
+.comparison-prompt .comparison-explanation {
+  margin-top: 12px;
+  color: #6b5a76;
+  font-size: 13px;
+}
+
 .comparison-card {
   margin: 0;
   overflow: hidden;
