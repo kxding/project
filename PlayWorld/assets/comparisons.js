@@ -13,7 +13,7 @@ const comparisonSection = `
       <figure class="comparison-card comparison-card-combined">
         <div class="comparison-video-shell">
           <video controls playsinline preload="metadata" poster="/project/PlayWorld/comparisons/control-strategies-gc002.jpg">
-            <source src="/project/PlayWorld/comparisons/control-strategies-gc002.mp4" type="video/mp4">
+            <source src="/project/PlayWorld/comparisons/control-strategies-gc002-720p.mp4" type="video/mp4">
             Your browser does not support video playback.
           </video>
         </div>
@@ -36,7 +36,7 @@ function ensureComparisonStyles() {
 
   const stylesheet = document.createElement('link');
   stylesheet.rel = 'stylesheet';
-  stylesheet.href = '/project/PlayWorld/assets/comparisons.css';
+  stylesheet.href = '/project/PlayWorld/assets/comparisons.css?v=20260818';
   stylesheet.dataset.playworldComparisons = 'true';
   document.head.append(stylesheet);
 }
