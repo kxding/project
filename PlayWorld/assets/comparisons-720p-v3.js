@@ -89,8 +89,10 @@ function initializeComparisons() {
   observer.observe(document.documentElement, { childList: true, subtree: true });
 }
 
-if (document.readyState === 'complete') {
-  window.setTimeout(initializeComparisons, 0);
+const scheduleComparisons = () => window.setTimeout(initializeComparisons, 1500);
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', scheduleComparisons, { once: true });
 } else {
-  window.addEventListener('load', () => window.setTimeout(initializeComparisons, 0), { once: true });
+  scheduleComparisons();
 }
