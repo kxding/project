@@ -12,8 +12,7 @@ const comparisonSection = `
     <div class="comparison-grid">
       <figure class="comparison-card comparison-card-combined">
         <div class="comparison-video-shell">
-          <video controls playsinline preload="metadata" poster="/project/PlayWorld/comparisons/control-strategies-gc002.jpg">
-            <source src="/project/PlayWorld/comparisons/control-strategies-gc002-720p.mp4" type="video/mp4">
+          <video controls playsinline preload="metadata" poster="/project/PlayWorld/comparisons/control-strategies-gc002.jpg" src="/project/PlayWorld/comparisons/control-strategies-gc002-720p.mp4">
             Your browser does not support video playback.
           </video>
         </div>
@@ -48,6 +47,7 @@ function mountComparisons() {
   if (!fullProcess || document.querySelector('#comparisons')) return;
 
   fullProcess.insertAdjacentHTML('beforebegin', comparisonSection);
+  document.querySelector('#comparisons video')?.load();
 
   const nav = document.querySelector('.nav-links');
   const fullProcessLink = nav?.querySelector('a[href="#full-process"]');
@@ -89,8 +89,8 @@ function initializeComparisons() {
   observer.observe(document.documentElement, { childList: true, subtree: true });
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initializeComparisons, { once: true });
+if (document.readyState === 'complete') {
+  window.setTimeout(initializeComparisons, 0);
 } else {
-  initializeComparisons();
+  window.addEventListener('load', () => window.setTimeout(initializeComparisons, 0), { once: true });
 }
