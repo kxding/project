@@ -7,7 +7,7 @@ const comparisonSection = `
     <div class="comparison-prompt">
       <span>OBJECTIVE</span>
       <p>Trace a rectangular trajectory while maintaining the camera's original orientation, then return to the starting position.</p>
-      <p class="comparison-explanation"><strong>Preset Only</strong> executes the rectangular trajectory in front of the central sculpture, so the sculpture remains continuously visible. The <strong>WorldPlay Agent</strong> instead moves around the sculpture, causing it to leave and later re-enter the field of view. This distinction is essential when evaluating world-model memory: keeping the sculpture continuously visible can artificially inflate geometric-consistency scores and does not, by itself, demonstrate memory. A stronger memory test requires the model to reconstruct the sculpture consistently after it has disappeared from view.</p>
+      <p class="comparison-explanation"><strong>Preset Only</strong> executes the rectangular trajectory in front of the central sculpture, so the sculpture remains continuously visible. The <strong>WorldPlay Agent</strong> instead moves around the sculpture, causing it to leave and later re-enter the field of view. This distinction is essential when evaluating world-model memory: keeping the sculpture <strong>continuously visible</strong> can artificially inflate geometric-consistency scores and <strong>does not demonstrate memory</strong>. <strong>A stronger memory test requires the model to reconstruct the sculpture consistently after it has disappeared from view.</strong></p>
     </div>
     <div class="comparison-grid">
       <figure class="comparison-card comparison-card-combined">
